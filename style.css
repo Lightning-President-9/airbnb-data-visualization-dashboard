@@ -1,66 +1,172 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #f5f7fa;
-    color: #333;
+    font-family: "Poppins", sans-serif;
+    background: #f7f7f7;
+    color: #222222;
+    min-height: 100vh;
 }
 
+
+/* Header */
 header {
-    background-color: #1f2933;
-    color: #ffffff;
-    padding: 25px;
+    background: white;
+    padding: 30px 20px;
     text-align: center;
+    border-bottom: 1px solid #dddddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
 }
 
 header h1 {
-    font-size: 26px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FF5A5F;
     margin-bottom: 8px;
 }
 
 header p {
-    font-size: 14px;
-    opacity: 0.9;
+    color: #717171;
+    font-size: 0.95rem;
 }
 
+
+/* Navigation Links */
 .links {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .links a {
-    color: #93c5fd;
-    margin: 0 10px;
+    display: inline-block;
     text-decoration: none;
-    font-size: 14px;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #FF5A5F,
+        #FF385C
+    );
+    padding: 11px 20px;
+    margin: 8px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255,90,95,0.3);
 }
 
 .links a:hover {
-    text-decoration: underline;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255,90,95,0.45);
 }
 
+
+/* Dashboard Grid */
 .dashboard {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-    gap: 20px;
-    padding: 25px;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(500px, 1fr)
+    );
+    gap: 25px;
+    padding: 35px;
 }
 
+
+/* Chart Cards */
 .chart {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 10px;
-    min-height: 420px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background: white;
+    min-height: 450px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
 }
 
+
+/* Airbnb Card Hover Effect */
+.chart:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+
+/* Plotly Container */
+.chart .plotly,
+.js-plotly-plot {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+/* Footer */
 footer {
-    background-color: #1f2933;
-    color: #ffffff;
+    background: white;
+    border-top: 1px solid #dddddd;
+    color: #717171;
     text-align: center;
-    padding: 12px;
-    font-size: 13px;
+    padding: 18px;
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF5A5F;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF385C;
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .chart {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .links a {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .dashboard {
+        padding: 15px;
+        gap: 15px;
+    }
 }
